@@ -13,7 +13,17 @@
 		<!-- Núcleo Cultural Produções -->
 
 		<!--ícone-->
-		<link rel="icon" href="<?php bloginfo('template_directory'); ?>/images/icone.svg">
+
+		<?php if ( has_site_icon()) : ?>
+		    <link rel="shortcut icon" href="<?php echo esc_url(get_site_icon_url()); ?>" />
+
+		    <?php else : ?>
+
+		   	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.png" />
+		  <?php endif; ?>
+
+
+			
 
 		<!-- 
 		<link rel="stylesheet" href="css/bootstrap.min.css">
