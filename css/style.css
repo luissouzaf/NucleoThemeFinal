@@ -98,6 +98,16 @@ h6 {
 .texto-branco {
   color: #ffffff;
 }
+
+.titulo_home {
+	text-shadow: #474a51 0 0 5px;
+}
+
+.setas_home {
+	font-size: 3rem;
+	color: white;
+	text-shadow: #474a51 0 0 5px;
+}
 /*
 --------------------------------------------------
  NAVBAR
@@ -124,7 +134,23 @@ h6 {
   background-size: cover;
 }
 
+.carousel-control-prev, .carousel-control-prev:hover {
+   opacity: 1;
+}
 
+.carousel-control-next, .carousel-control-next:hover {
+   opacity: 1;
+}
+
+.carousel-indicators, .carousel-indicators:hover {
+   opacity: 1;
+   text-shadow: #474a51 0 0 3px;
+}
+
+.carousel-item p {
+	text-shadow: #000 0 0 8px;
+	font-weight: bold;
+}
 /*
 --------------------------------------------------
  O NUCLEO

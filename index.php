@@ -46,7 +46,7 @@
 			<h1 class="navbar-brand">
 
 				<?php if ( get_theme_mod( 'm1_logo' ) ) : ?>
-				    <a href="<?php bloginfo('url'); ?>"><img id="logo" src="<?php echo get_theme_mod( 'm1_logo' ); ?>" alt="Núcleo Cultural Logo"></a>
+				    <a href="<?php bloginfo('url'); ?>"><img id="logo" src="<?php echo get_theme_mod( 'm1_logo' ); ?>" alt="Núcleo Cultural"></a>
 				 
 				    <?php else : ?>
 				               
@@ -82,6 +82,24 @@
 <header id="home">
 	<div id="carousel-header" class="carousel slide" data-ride="carousel-header">
 
+		<ol class="carousel-indicators">
+			<?php
+			$args = array(
+				'post_type' => 'Slider Home',
+				'posts_per_page' => 5,
+			);
+			$query = new WP_Query( $args );
+			?>
+			<?php if($query->have_posts()) : ?>
+				<?php $i = 0; ?>
+				<?php while($query->have_posts()) : $query->the_post() ?>
+					<li data-target="#carousel-header" data-slide-to="<?php echo $i ?>" class="<?php if($i === 0): ?>active<?php endif; ?>"></li>
+					<?php $i++; ?>
+				<?php endwhile ?>
+			<?php endif ?>
+			<?php wp_reset_postdata(); ?>
+		</ol>	
+
 		<div class="carousel-inner" role="listbox">
 
 		<?php 
@@ -106,8 +124,8 @@
 		<div class="carousel-item <?php $c++; if($c == 1) { echo ' active'; } ?>" style="background-image: url('<?php echo $slider_home_img_url ?>')">
 
 			<div class="carousel-caption">
-				<h2 class="display-flex justify-content-center"><?php the_title(); ?></h2>
-				<p class="lead"><?php the_content(); ?></p>
+				<h2 class="display-flex justify-content-center titulo_home"><?php the_title(); ?></h2>
+				<p><?php the_content(); ?></p>
 			</div>
 		</div>
 
@@ -118,11 +136,12 @@
 		</div>
 
 		<a class="carousel-control-prev" href="#carousel-header" role="button" data-slide="prev">
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="setas_home"><i class="fas fa-chevron-left"></i></i></span>
 			<span class="sr-only">Anterior</span>
 		</a>
 		<a class="carousel-control-next" href="#carousel-header" role="button" data-slide="next">
-			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="setas_home"><i class="fas fa-chevron-right"></i></i></span>
+			<!--<span class="carousel-control-next-icon setas_home" aria-hidden="false"></span>-->
 			<span class="sr-only">Próximo</span>
 		</a>
 	</div>
