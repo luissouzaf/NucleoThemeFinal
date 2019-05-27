@@ -384,7 +384,7 @@
 				<div class="tablet bg-dark">
 					<!--Carousel Wrapper-->
 					<div id="carousel-projetos" class="carousel slide" data-ride="carousel-projetos">
-						<ol class="carousel-indicators d-none">
+						<ol class="carousel-indicators">
 						      <li data-target="#carousel-projetos" data-slide-to="0" class="active"></li>
 						      <li data-target="#carousel-projetos" data-slide-to="1"></li>
 						      <li data-target="#carousel-projetos" data-slide-to="2"></li>

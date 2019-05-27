@@ -145,4 +145,17 @@ $(document).ready(function() {
   });
 });
 
+ /* ---------------CAROUSEL autoplay-------------------------------*/
+$(document).ready(function() {
+	$('#carousel-header').carousel({
+	  interval: 3000,
+	  cycle: true
+	});
+});
 
+$(document).ready(function() {
+	$('#carousel-projetos').carousel({
+	  interval: 3000,
+	  cycle: true
+	});
+});
